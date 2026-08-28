@@ -2,49 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Pocket Lota</title>
-  <meta name="description" content="Your lota. Finally fits in a jacket. Fill, slide, pour, stow. $19.99.">
+  <meta name="description" content="Your lota. Finally fits in a jacket. Fill, slide, pour, stow. $19.99 USD.">
   <meta property="og:title" content="Pocket Lota">
   <meta property="og:description" content="Your lota. Finally fits in a jacket.">
-  <meta property="og:image" content="lota-stowed.png?v=3">
-  <link rel="icon" href="lota-stowed.png?v=3">
+  <meta property="og:image" content="lota-stowed.png?v=4">
+  <link rel="icon" href="lota-stowed.png?v=4">
   <style>
-    :root { color-scheme: dark; }
+    :root {
+      color-scheme: dark;
+      --bg: #0b0b0b;
+      --ink: #f3ece1;
+      --mute: #b8afa2;
+      --line: #26221c;
+      --panel: #141311;
+      --serif: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+      --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
     * { box-sizing: border-box; margin: 0; }
     html, body { min-height: 100%; }
     body {
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-      background: #0c0c0c;
-      color: #efe8dc;
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--ink);
       -webkit-font-smoothing: antialiased;
     }
-    main {
+    .wrap {
       min-height: 100dvh;
-      max-width: 26.5rem;
+      max-width: 28rem;
       margin: 0 auto;
-      padding: 1.75rem 1.15rem 7.5rem;
+      padding: 0 1.25rem 8.25rem;
     }
-    h1 {
-      font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
-      font-size: clamp(2.05rem, 8.4vw, 2.7rem);
-      line-height: 1.06;
-      letter-spacing: -0.03em;
-      font-weight: 500;
-      margin-bottom: 1.15rem;
+    .brand {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 1.15rem 0 1.35rem;
+      border-bottom: 1px solid var(--line);
     }
-    h2 {
-      font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
-      font-size: 1.45rem;
+    .brand strong {
+      font-family: var(--serif);
+      font-size: 1.05rem;
       font-weight: 500;
       letter-spacing: -0.02em;
-      margin: 2.15rem 0 0.75rem;
     }
+    .brand span {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mute);
+    }
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.15rem, 8.6vw, 2.85rem);
+      line-height: 1.05;
+      letter-spacing: -0.032em;
+      font-weight: 500;
+      margin: 1.7rem 0 1.15rem;
+    }
+    h2 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.7rem;
+    }
+    section { margin-top: 2.55rem; }
     .hero {
       width: 100%;
       aspect-ratio: 1 / 1;
-      background: #111;
-      border-radius: 1.05rem;
+      background: #101010;
+      border-radius: 1.15rem;
       overflow: hidden;
     }
     .hero video, .shot img, .shot video {
@@ -53,82 +82,133 @@
       height: 100%;
       object-fit: cover;
     }
-    .price {
-      margin-top: 1.25rem;
-      font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
-      font-size: 1.85rem;
-      letter-spacing: -0.02em;
+    .offer {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 1.35rem;
+      padding-bottom: 1.15rem;
+      border-bottom: 1px solid var(--line);
     }
-    .price span {
+    .price {
+      font-family: var(--serif);
+      font-size: 2rem;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .price small {
       display: block;
-      margin-top: 0.2rem;
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-      font-size: 0.92rem;
-      letter-spacing: 0.01em;
-      color: #b9b0a3;
+      margin-top: 0.4rem;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--mute);
+    }
+    .ship {
+      text-align: right;
+      font-size: 0.86rem;
+      line-height: 1.35;
+      color: var(--mute);
     }
     p.lead, p.body, .step p, .spec dd {
-      font-size: 0.98rem;
-      line-height: 1.5;
-      color: #cfc6b8;
+      font-size: 1rem;
+      line-height: 1.55;
+      color: #d2c9bb;
     }
-    p.lead { margin-top: 0.85rem; color: #d8d0c4; }
-    p.body { margin-top: 0.7rem; }
-    .steps { margin-top: 0.35rem; }
+    p.lead { margin-top: 1.15rem; color: #ddd4c6; }
+    p.body { margin-top: 0.15rem; }
+    .steps { margin-top: 0.2rem; }
     .step {
-      padding: 0.95rem 0;
-      border-top: 1px solid #262626;
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 0.55rem 0.7rem;
+      padding: 1.05rem 0;
+      border-top: 1px solid var(--line);
     }
-    .step:last-child { border-bottom: 1px solid #262626; }
+    .step:last-of-type { border-bottom: 1px solid var(--line); }
+    .step em {
+      font-family: var(--serif);
+      font-style: normal;
+      font-size: 1.05rem;
+      color: var(--mute);
+    }
     .step strong {
       display: block;
       font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
+      font-weight: 650;
+      letter-spacing: 0.09em;
       text-transform: uppercase;
-      color: #efe8dc;
       margin-bottom: 0.28rem;
     }
     .shot {
       width: 100%;
       aspect-ratio: 1 / 1;
-      background: #111;
-      border-radius: 1.05rem;
+      background: #101010;
+      border-radius: 1.15rem;
       overflow: hidden;
-      margin: 1rem 0 0.35rem;
+      margin: 1.15rem 0 0.15rem;
+    }
+    .spec-card {
+      margin-top: 0.85rem;
+      padding: 1.1rem 1.1rem 0.35rem;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 1.1rem;
     }
     .spec {
       display: grid;
-      grid-template-columns: 7.2rem 1fr;
-      gap: 0.55rem 0.8rem;
-      margin-top: 0.85rem;
+      grid-template-columns: 6.4rem 1fr;
+      gap: 0.85rem 0.9rem;
+      padding-bottom: 0.75rem;
     }
+    .spec + .spec { border-top: 1px solid var(--line); padding-top: 0.85rem; }
     .spec dt {
-      font-size: 0.78rem;
-      letter-spacing: 0.06em;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #8f877c;
-      padding-top: 0.12rem;
+      color: #8d8578;
+      padding-top: 0.18rem;
+    }
+    footer {
+      margin-top: 2.75rem;
+      padding-top: 1.15rem;
+      border-top: 1px solid var(--line);
+      color: var(--mute);
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+    footer strong {
+      display: block;
+      font-family: var(--serif);
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.2rem;
     }
     .buy {
       position: fixed;
       left: 0;
       right: 0;
       bottom: 0;
-      padding: 0.8rem 1.15rem calc(0.8rem + env(safe-area-inset-bottom));
-      background: linear-gradient(to top, #0c0c0c 62%, rgba(12,12,12,0));
+      padding: 0.7rem 1.25rem calc(0.75rem + env(safe-area-inset-bottom));
+      background: linear-gradient(to top, var(--bg) 68%, rgba(11,11,11,0));
+    }
+    .buy-inner {
+      max-width: 28rem;
+      margin: 0 auto;
     }
     .buy a {
       display: block;
       text-align: center;
       text-decoration: none;
-      background: #efe8dc;
+      background: var(--ink);
       color: #111;
-      font-weight: 600;
-      font-size: 1rem;
+      font-weight: 650;
+      font-size: 1.02rem;
       letter-spacing: 0.01em;
       border-radius: 999px;
-      padding: 0.95rem 1.2rem;
+      padding: 0.98rem 1.2rem;
     }
     .buy a:active { transform: scale(0.99); }
   </style>
@@ -146,79 +226,126 @@
     src="https://www.facebook.com/tr?id=000000000000000&ev=PageView&noscript=1"/></noscript>
 </head>
 <body>
-  <main>
-    <h1>Your lota. Finally fits in a jacket.</h1>
-    <div class="hero">
-      <video
-        autoplay
-        muted
-        playsinline
-        webkit-playsinline
-        poster="lota-jacket.jpg"
-        src="lota-hero.mp4"
-      ></video>
-    </div>
-    <p class="price">$19.99<span>Ships from pocketlota.com</span></p>
-    <p class="lead">A lota is a bottle you fill and pour after you use the bathroom. Most of them are the size of a thermos. This one parks the pipe in a track on the face, so the bottle stays pocket-thin when you are done.</p>
-
-    <h2>How the pipe works</h2>
-    <div class="steps">
-      <div class="step">
-        <strong>1. Fill</strong>
-        <p>Water goes in the neck on top. Screw the cap back on.</p>
-      </div>
-      <div class="step">
-        <strong>2. Slide</strong>
-        <p>Thumb the ridged slider. The pipe rides a T-slot until the ports line up. It cannot pull off the bottle.</p>
-      </div>
-      <div class="shot">
+  <div class="wrap">
+    <header class="brand">
+      <strong>Pocket Lota</strong>
+      <span>$19.99 USD</span>
+    </header>
+    <main>
+      <h1>Your lota. Finally fits in a jacket.</h1>
+      <div class="hero">
         <video
+          id="hero-video"
           autoplay
           muted
-          loop
           playsinline
           webkit-playsinline
-          poster="lota-stowed.png?v=3"
-          src="lota-slide.mp4"
+          preload="auto"
+          poster="lota-jacket.jpg"
+          src="lota-hero.mp4"
         ></video>
       </div>
-      <div class="step">
-        <strong>3. Pour</strong>
-        <p>Tip it. A 2.4 mm jet sends a thin stream out the beak, not a splash.</p>
+      <div class="offer">
+        <p class="price">$19.99<small>USD</small></p>
+        <p class="ship">Ships from<br>pocketlota.com</p>
       </div>
-      <div class="step">
-        <strong>4. Stow</strong>
-        <p>Slide the pipe back flush with the face. The whole thing goes in a jacket pocket.</p>
-      </div>
-    </div>
-    <div class="shot"><img src="lota-jacket.jpg" alt="Pocket Lota in a jacket pocket"></div>
+      <p class="lead">A lota is a bottle you fill and pour after you use the bathroom. Most of them are the size of a thermos. This one parks the pipe in a track on the face, so the bottle stays pocket-thin when you are done.</p>
 
-    <h2>Why it exists</h2>
-    <p class="body">A hose bidet needs a tap. A squeeze bottle leaks and looks like toiletry. A classic lota does the job and then sits on the tank because it will not fit anywhere else. Pocket Lota is the same pour, cut down so you can carry it.</p>
+      <section>
+        <h2>How the pipe works</h2>
+        <div class="steps">
+          <div class="step">
+            <em>01</em>
+            <div>
+              <strong>Fill</strong>
+              <p>Water goes in the neck on top. Screw the cap back on.</p>
+            </div>
+          </div>
+          <div class="step">
+            <em>02</em>
+            <div>
+              <strong>Slide</strong>
+              <p>Thumb the ridged slider. The pipe rides a T-slot until the ports line up. It cannot pull off the bottle.</p>
+            </div>
+          </div>
+          <div class="shot">
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              webkit-playsinline
+              preload="metadata"
+              poster="lota-stowed.png?v=4"
+              src="lota-slide.mp4"
+            ></video>
+          </div>
+          <div class="step">
+            <em>03</em>
+            <div>
+              <strong>Pour</strong>
+              <p>Tip it. A 2.4 mm jet sends a thin stream out the beak, not a splash.</p>
+            </div>
+          </div>
+          <div class="step">
+            <em>04</em>
+            <div>
+              <strong>Stow</strong>
+              <p>Slide the pipe back flush with the face. The whole thing goes in a jacket pocket.</p>
+            </div>
+          </div>
+        </div>
+        <div class="shot"><img src="lota-jacket.jpg" alt="Pocket Lota in a jacket pocket"></div>
+      </section>
 
-    <h2>The bottle</h2>
-    <dl class="spec">
-      <dt>Size</dt>
-      <dd>About 78 × 46 × 150 mm with the pipe stowed</dd>
-      <dt>Hold</dt>
-      <dd>About 500 ml</dd>
-      <dt>Jet</dt>
-      <dd>2.4 mm through the beak</dd>
-      <dt>Fill</dt>
-      <dd>26 mm neck on top, with a cap</dd>
-      <dt>Pipe</dt>
-      <dd>Rides a T-slot on the face. Stow flush, slide up to pour</dd>
-    </dl>
-  </main>
+      <section>
+        <h2>Why it exists</h2>
+        <p class="body">A hose bidet needs a tap. A squeeze bottle leaks and looks like toiletry. A classic lota does the job and then sits on the tank because it will not fit anywhere else. Pocket Lota is the same pour, cut down so you can carry it.</p>
+      </section>
+
+      <section>
+        <h2>The bottle</h2>
+        <div class="shot"><img src="lota-detail.jpg" alt="Pocket Lota, pipe stowed on the face"></div>
+        <div class="spec-card">
+          <dl class="spec"><dt>Size</dt><dd>About 78 × 46 × 150 mm with the pipe stowed</dd></dl>
+          <dl class="spec"><dt>Hold</dt><dd>About 500 ml</dd></dl>
+          <dl class="spec"><dt>Jet</dt><dd>2.4 mm through the beak</dd></dl>
+          <dl class="spec"><dt>Fill</dt><dd>26 mm neck on top, with a cap</dd></dl>
+          <dl class="spec"><dt>Pipe</dt><dd>Rides a T-slot on the face. Stow flush, slide up to pour</dd></dl>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <strong>Pocket Lota</strong>
+      $19.99 USD. Ships from pocketlota.com.
+    </footer>
+  </div>
   <div class="buy">
-    <a id="buy" href="https://pocketlota.com">Buy · $19.99</a>
+    <div class="buy-inner">
+      <a id="buy" href="https://pocketlota.com">Buy · $19.99</a>
+    </div>
   </div>
   <script>
-    document.getElementById("buy").addEventListener("click", function () {
-      if (typeof fbq === "function") {
-        fbq("track", "Purchase", { currency: "USD", value: 19.99 });
+    (function () {
+      var hero = document.getElementById("hero-video");
+      if (hero) {
+        hero.removeAttribute("loop");
+        hero.addEventListener("ended", function () {
+          try {
+            hero.pause();
+            if (hero.duration) hero.currentTime = Math.max(0, hero.duration - 0.04);
+          } catch (e) {}
+        });
       }
-    });
+      var buy = document.getElementById("buy");
+      if (buy) {
+        buy.addEventListener("click", function () {
+          if (typeof fbq === "function") {
+            fbq("track", "Purchase", { currency: "USD", value: 19.99 });
+          }
+        });
+      }
+    })();
   </script>
 </body>
 </html>
