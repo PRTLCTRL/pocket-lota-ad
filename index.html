@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pocket Lota</title>
-  <meta name="description" content="Your lota. Finally fits in a jacket.">
+  <meta name="description" content="Your lota. Finally fits in a jacket. Fill, slide, pour, stow. £14.99.">
   <meta property="og:title" content="Pocket Lota">
   <meta property="og:description" content="Your lota. Finally fits in a jacket.">
   <meta property="og:image" content="lota-stowed.png?v=3">
@@ -14,25 +14,31 @@
     * { box-sizing: border-box; margin: 0; }
     html, body { min-height: 100%; }
     body {
-      font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
       background: #0c0c0c;
       color: #efe8dc;
       -webkit-font-smoothing: antialiased;
     }
     main {
       min-height: 100dvh;
-      max-width: 26rem;
+      max-width: 26.5rem;
       margin: 0 auto;
-      padding: 2rem 1.15rem 7.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.15rem;
+      padding: 1.75rem 1.15rem 7.5rem;
     }
     h1 {
+      font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
       font-size: clamp(2.05rem, 8.4vw, 2.7rem);
       line-height: 1.06;
       letter-spacing: -0.03em;
       font-weight: 500;
+      margin-bottom: 1.15rem;
+    }
+    h2 {
+      font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin: 2.15rem 0 0.75rem;
     }
     .hero {
       width: 100%;
@@ -41,19 +47,68 @@
       border-radius: 1.05rem;
       overflow: hidden;
     }
-    .hero video {
+    .hero video, .shot img {
       display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: 50% 50%;
     }
-    .line {
+    .price {
+      margin-top: 1.25rem;
+      font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+      font-size: 1.85rem;
+      letter-spacing: -0.02em;
+    }
+    .price span {
+      display: block;
+      margin-top: 0.2rem;
       font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-      font-size: 0.98rem;
-      line-height: 1.45;
+      font-size: 0.92rem;
       letter-spacing: 0.01em;
       color: #b9b0a3;
+    }
+    p.lead, p.body, .step p, .spec dd {
+      font-size: 0.98rem;
+      line-height: 1.5;
+      color: #cfc6b8;
+    }
+    p.lead { margin-top: 0.85rem; color: #d8d0c4; }
+    p.body { margin-top: 0.7rem; }
+    .steps { margin-top: 0.35rem; }
+    .step {
+      padding: 0.95rem 0;
+      border-top: 1px solid #262626;
+    }
+    .step:last-child { border-bottom: 1px solid #262626; }
+    .step strong {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #efe8dc;
+      margin-bottom: 0.28rem;
+    }
+    .shot {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: #111;
+      border-radius: 1.05rem;
+      overflow: hidden;
+      margin: 1rem 0 0.35rem;
+    }
+    .spec {
+      display: grid;
+      grid-template-columns: 7.2rem 1fr;
+      gap: 0.55rem 0.8rem;
+      margin-top: 0.85rem;
+    }
+    .spec dt {
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #8f877c;
+      padding-top: 0.12rem;
     }
     .buy {
       position: fixed;
@@ -67,7 +122,6 @@
       display: block;
       text-align: center;
       text-decoration: none;
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
       background: #efe8dc;
       color: #111;
       font-weight: 600;
@@ -105,15 +159,55 @@
         src="lota-slide.mp4"
       ></video>
     </div>
-    <p class="line">Slides out when you need it. Back in the jacket when you don’t.</p>
+    <p class="price">£14.99<span>Ships from pocketlota.com</span></p>
+    <p class="lead">A lota is a bottle you fill and pour after you use the bathroom. Most of them are the size of a thermos. This one parks the pipe in a track on the face, so the bottle stays pocket-thin when you are done.</p>
+
+    <h2>How the pipe works</h2>
+    <div class="steps">
+      <div class="step">
+        <strong>1. Fill</strong>
+        <p>Water goes in the neck on top. Screw the cap back on.</p>
+      </div>
+      <div class="step">
+        <strong>2. Slide</strong>
+        <p>Thumb the ridged slider. The pipe rides a T-slot until the ports line up. It cannot pull off the bottle.</p>
+      </div>
+      <div class="shot"><img src="lota-detail.jpg" alt="Ridged slider in the pipe track"></div>
+      <div class="step">
+        <strong>3. Pour</strong>
+        <p>Tip it. A 2.4 mm jet sends a thin stream out the beak, not a splash.</p>
+      </div>
+      <div class="step">
+        <strong>4. Stow</strong>
+        <p>Slide the pipe back flush with the face. The whole thing goes in a jacket pocket.</p>
+      </div>
+    </div>
+    <div class="shot"><img src="lota-jacket.jpg" alt="Pocket Lota in a jacket pocket"></div>
+
+    <h2>Why it exists</h2>
+    <p class="body">A hose bidet needs a tap. A squeeze bottle leaks and looks like toiletry. A classic lota does the job and then sits on the tank because it will not fit anywhere else. Pocket Lota is the same pour, cut down so you can carry it.</p>
+
+    <h2>The bottle</h2>
+    <dl class="spec">
+      <dt>Size</dt>
+      <dd>About 78 × 46 × 150 mm with the pipe stowed</dd>
+      <dt>Hold</dt>
+      <dd>About 500 ml</dd>
+      <dt>Jet</dt>
+      <dd>2.4 mm through the beak</dd>
+      <dt>Fill</dt>
+      <dd>26 mm neck on top, with a cap</dd>
+      <dt>Pipe</dt>
+      <dd>Rides a T-slot on the face. Stow flush, slide up to pour</dd>
+    </dl>
   </main>
   <div class="buy">
-    <a id="buy" href="https://pocketlota.com">Buy</a>
+    <a id="buy" href="https://pocketlota.com">Buy · £14.99</a>
   </div>
   <script>
     document.getElementById("buy").addEventListener("click", function () {
       if (typeof fbq === "function") {
-        fbq("track", "Purchase", { currency: "USD" });
+        fbq("track", "Purchase", { currency: "GBP", value: 14.99 });
       }
     });
   </script>
