@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pocket Lota</title>
+  <meta name="description" content="Your lota. Finally fits in a jacket. $19.99 USD.">
+  <meta property="og:title" content="Pocket Lota">
+  <meta property="og:description" content="It just pours.">
+  <meta property="og:image" content="lota-hero-poster.jpg">
+  <link rel="icon" href="lota-lemon.png">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #000;
+      --ink: #f5f5f7;
+      --mute: #a1a1a6;
+      --lemon: #ffe14d;
+      --line: rgba(255,255,255,0.12);
+      --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; }
+    html, body { background: var(--bg); color: var(--ink); }
+    body {
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 1.25rem;
+      background: rgba(0,0,0,0.72);
+      backdrop-filter: saturate(180%) blur(18px);
+      -webkit-backdrop-filter: saturate(180%) blur(18px);
+    }
+    .mark {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+    }
+    .mark img {
+      width: 2.1rem;
+      height: 2.1rem;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #111;
+    }
+    .mark strong {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+    .price-chip {
+      font-size: 0.8rem;
+      color: var(--lemon);
+      letter-spacing: 0.02em;
+    }
+    .screen {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2.4rem 1.25rem 7.5rem;
+    }
+    .screen.tight { min-height: auto; padding-top: 4.5rem; padding-bottom: 4.5rem; }
+    h1, h2 {
+      font-weight: 600;
+      letter-spacing: -0.045em;
+      line-height: 0.95;
+    }
+    h1 { font-size: clamp(3.1rem, 14vw, 5.4rem); }
+    h2 { font-size: clamp(2.6rem, 12vw, 4.6rem); }
+    h2.lemon { color: var(--lemon); }
+    .kicker {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--mute);
+      margin-bottom: 1.1rem;
+    }
+    .sub {
+      margin-top: 1.15rem;
+      max-width: 22rem;
+      font-size: 1.15rem;
+      line-height: 1.4;
+      color: var(--mute);
+    }
+    .hero {
+      width: min(100%, 28rem);
+      aspect-ratio: 1;
+      margin: 1.6rem auto 0;
+      border-radius: 1.6rem;
+      overflow: hidden;
+      background: #0a0a0a;
+    }
+    .hero video, .loop video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .acts { display: grid; gap: 3.2rem; }
+    .act {
+      display: grid;
+      gap: 0.55rem;
+    }
+    .act b {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--lemon);
+    }
+    .act strong {
+      font-size: clamp(2rem, 9vw, 3rem);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+    }
+    .act p { color: var(--mute); font-size: 1.05rem; line-height: 1.45; max-width: 22rem; }
+    .loop {
+      width: min(100%, 16rem);
+      aspect-ratio: 1;
+      margin: 2.4rem auto 0;
+      border-radius: 1.15rem;
+      overflow: hidden;
+      background: #111;
+    }
+    .meta {
+      margin-top: 2rem;
+      color: var(--mute);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .meta span { color: var(--ink); }
+    .end {
+      text-align: center;
+      align-items: center;
+    }
+    .end .dollars {
+      margin-top: 1.4rem;
+      font-size: clamp(2.4rem, 10vw, 3.6rem);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      color: var(--lemon);
+    }
+    .end small {
+      display: block;
+      margin-top: 0.45rem;
+      color: var(--mute);
+      font-size: 0.95rem;
+    }
+    footer {
+      padding: 0 1.25rem 8rem;
+      color: #6e6e73;
+      font-size: 0.78rem;
+    }
+    .buy {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      padding: 0.75rem 1.25rem calc(0.8rem + env(safe-area-inset-bottom));
+      background: linear-gradient(to top, #000 70%, rgba(0,0,0,0));
+    }
+    .buy a {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      background: var(--lemon);
+      color: #111;
+      font-weight: 650;
+      border-radius: 999px;
+      padding: 0.95rem 1.2rem;
+      font-size: 1.02rem;
+    }
+    .buy a:active { transform: scale(0.99); }
+  </style>
+  <script>
+    window.META_PIXEL_ID = "000000000000000";
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+    fbq("init", window.META_PIXEL_ID);
+    fbq("track", "PageView");
+  </script>
+</head>
+<body>
+  <header>
+    <a class="mark" href="#top">
+      <img src="lota-lemon.png" alt="Lota Lemon">
+      <strong>Pocket Lota</strong>
+    </a>
+    <span class="price-chip">$19.99</span>
+  </header>
+
+  <main id="top">
+    <section class="screen">
+      <p class="kicker">Pocket Lota</p>
+      <h1>Your lota. Finally fits in a jacket.</h1>
+      <div class="hero">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          webkit-playsinline
+          preload="auto"
+          poster="lota-hero-poster.jpg"
+          src="lota-hero-loop.mp4"
+        ></video>
+      </div>
+    </section>
+
+    <section class="screen">
+      <h2 class="lemon">It just pours.</h2>
+      <p class="sub">No hose. No splash. A thin jet, then it disappears back into the bottle.</p>
+    </section>
+
+    <section class="screen">
+      <h2>Wipe culture is over.</h2>
+      <p class="sub">A hose bidet needs a tap. A squeeze bottle looks like toiletry. A tank lota does the job and then lives there. This one leaves with you.</p>
+    </section>
+
+    <section class="screen tight">
+      <p class="kicker">How it works</p>
+      <h2>Four moves.</h2>
+      <div class="acts">
+        <div class="act">
+          <b>01</b>
+          <strong>Fill</strong>
+          <p>Water in the neck on top. Cap back on. That is the whole ritual.</p>
+        </div>
+        <div class="act">
+          <b>02</b>
+          <strong>Slide</strong>
+          <p>Thumb the ridged slider. The pipe rides a T-slot until the ports line up. It cannot pull off.</p>
+        </div>
+        <div class="act">
+          <b>03</b>
+          <strong>Pour</strong>
+          <p>Tip it. A 2.4 mm jet. A thin stream out the beak, not a splash.</p>
+        </div>
+        <div class="act">
+          <b>04</b>
+          <strong>Stow</strong>
+          <p>Slide the pipe flush with the face. Jacket pocket. Next thing.</p>
+        </div>
+      </div>
+      <div class="loop">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          webkit-playsinline
+          preload="metadata"
+          poster="lota-stowed.png"
+          src="lota-slide.mp4"
+        ></video>
+      </div>
+    </section>
+
+    <section class="screen">
+      <h2>Your other daily driver.</h2>
+      <p class="sub">Same pour as the classic. Cut down so it is actually yours all day, not furniture in a bathroom.</p>
+      <p class="meta">
+        <span>500 ml</span> hold<br>
+        <span>78 × 46 × 150 mm</span> stowed<br>
+        <span>2.4 mm</span> jet
+      </p>
+    </section>
+
+    <section class="screen end">
+      <p class="kicker">Think different</p>
+      <h2>Stay cleaner.</h2>
+      <p class="dollars">$19.99</p>
+      <small>USD. Ships from pocketlota.com</small>
+    </section>
+  </main>
+
+  <footer>Pocket Lota. The most personal product Apple never made.</footer>
+
+  <div class="buy">
+    <a id="buy" href="https://pocketlota.com">Buy · $19.99</a>
+  </div>
+  <script>
+    document.getElementById("buy").addEventListener("click", function () {
+      if (typeof fbq === "function") fbq("track", "Purchase", { currency: "USD", value: 19.99 });
+    });
+  </script>
+</body>
+</html>
