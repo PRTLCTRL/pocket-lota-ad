@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pocket Lota</title>
+  <meta name="description" content="Your lota. Finally fits in a jacket. $19.99 USD.">
+  <meta property="og:title" content="Pocket Lota">
+  <meta property="og:description" content="It just pours.">
+  <meta property="og:image" content="lota-hero-poster.jpg">
+  <link rel="icon" href="lota-lemon.png">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #000;
+      --ink: #f5f5f7;
+      --mute: #86868b;
+      --lemon: #ffe14d;
+      --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; }
+    html { scroll-behavior: smooth; }
+    html, body { background: var(--bg); color: var(--ink); }
+    body {
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; text-decoration: none; }
+    header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: max(0.75rem, env(safe-area-inset-top)) 1.5rem 0.75rem;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+    }
+    .mark { display: flex; align-items: center; gap: 0.7rem; }
+    .mark img { width: 2.15rem; height: 2.15rem; border-radius: 50%; object-fit: cover; }
+    .mark span { font-size: 0.92rem; font-weight: 600; letter-spacing: -0.03em; }
+    .price-chip { font-size: 0.82rem; font-weight: 500; color: var(--lemon); }
+    .screen {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5.75rem 1.5rem 8.25rem;
+    }
+    .screen.hero-screen { padding: 5.25rem 0 7.5rem; }
+    .screen.hero-screen .copy { padding: 0 1.5rem; text-align: center; align-self: center; }
+    .screen.center { align-items: center; text-align: center; }
+    .screen.compact { min-height: auto; padding-block: 6.5rem; }
+    .kicker {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mute);
+      margin-bottom: 1.25rem;
+    }
+    h1, h2 {
+      font-weight: 600;
+      letter-spacing: -0.045em;
+      line-height: 0.92;
+      max-width: 12ch;
+    }
+    h1 { font-size: clamp(3.4rem, 15vw, 6.2rem); }
+    h2 { font-size: clamp(2.8rem, 13vw, 5.4rem); }
+    h2.lemon { color: var(--lemon); }
+    .sub {
+      margin-top: 1.35rem;
+      max-width: 20rem;
+      font-size: clamp(1.05rem, 3.5vw, 1.25rem);
+      line-height: 1.45;
+      color: var(--mute);
+    }
+    .screen.center .sub, .screen.hero-screen .sub { margin-inline: auto; }
+    .hero {
+      width: 100%;
+      aspect-ratio: 1;
+      margin: 2.25rem 0 0;
+      background: #050505;
+    }
+    .hero video, .still img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .still {
+      width: min(100%, 22rem);
+      aspect-ratio: 1;
+      margin: 2.75rem auto 0;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      background: #0a0a0a;
+    }
+    .acts { display: grid; gap: 3rem; margin-top: 2.75rem; max-width: 22rem; }
+    .act b {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--lemon);
+      margin-bottom: 0.35rem;
+    }
+    .act strong {
+      display: block;
+      font-size: clamp(1.85rem, 8vw, 2.75rem);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .act p { color: var(--mute); font-size: 1rem; line-height: 1.5; max-width: 20rem; }
+    .specs { margin-top: 2.25rem; display: grid; gap: 0.85rem; max-width: 16rem; }
+    .spec {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.95rem;
+      color: var(--mute);
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .spec:last-child { border-bottom: none; }
+    .spec span:last-child { color: var(--ink); font-weight: 500; text-align: right; }
+    .dollars {
+      margin-top: 1.5rem;
+      font-size: clamp(2.6rem, 11vw, 4rem);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      color: var(--lemon);
+    }
+    .fine { display: block; margin-top: 0.5rem; color: var(--mute); font-size: 0.95rem; }
+    footer { padding: 0 1.5rem 9rem; color: #48484a; font-size: 0.75rem; text-align: center; }
+    .buy {
+      position: fixed;
+      inset: auto 0 0;
+      z-index: 10;
+      padding: 0.65rem 1.5rem calc(0.75rem + env(safe-area-inset-bottom));
+      background: linear-gradient(to top, rgba(0,0,0,0.95) 55%, transparent);
+      pointer-events: none;
+    }
+    .buy a {
+      pointer-events: auto;
+      display: block;
+      text-align: center;
+      background: var(--lemon);
+      color: #111;
+      font-weight: 650;
+      border-radius: 999px;
+      padding: 1rem 1.25rem;
+      font-size: 1.02rem;
+    }
+    .buy a:active { transform: scale(0.98); }
+    .reveal { opacity: 0; transform: translateY(2.5rem); }
+    .reveal.is-in {
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1), transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .reveal.is-in { opacity: 1; transform: none; transition: none; }
+    }
+    @media (min-width: 768px) {
+      .screen { padding-inline: 3rem; }
+      .screen.hero-screen { padding-inline: 0; }
+      .screen.hero-screen .copy { padding-inline: 3rem; }
+      .hero { width: min(100%, 34rem); margin-inline: auto; border-radius: 1.75rem; }
+      h1, h2 { max-width: none; }
+      .sub { max-width: 24rem; }
+    }
+  </style>
+  <script>
+    window.META_PIXEL_ID = "000000000000000";
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+    fbq("init", window.META_PIXEL_ID);
+    fbq("track", "PageView");
+  </script>
+</head>
+<body>
+  <header>
+    <a class="mark" href="#top">
+      <img src="lota-lemon.png" alt="Lota Lemon" width="34" height="34">
+      <span>Pocket Lota</span>
+    </a>
+    <span class="price-chip">$19.99</span>
+  </header>
+
+  <main id="top">
+    <section class="screen reveal hero-screen">
+      <div class="copy">
+        <p class="kicker">Pocket Lota</p>
+        <h1>Your lota.<br>Finally fits in a jacket.</h1>
+      </div>
+      <div class="hero">
+        <video autoplay muted loop playsinline webkit-playsinline preload="auto" poster="lota-hero-poster.jpg" aria-label="Pocket Lota product loop">
+          <source src="lota-hero-loop.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+
+    <section class="screen reveal">
+      <h2 class="lemon">It just pours.</h2>
+      <p class="sub">No hose. No splash. A thin jet, then it disappears back into the bottle.</p>
+      <div class="still">
+        <img src="lota-pour.jpg" width="800" height="800" alt="Pocket Lota pouring a thin jet">
+      </div>
+    </section>
+
+    <section class="screen reveal">
+      <h2>Wipe culture is over.</h2>
+      <p class="sub">A hose bidet needs a tap. A squeeze bottle looks like toiletry. A tank lota does the job and then lives there. This one leaves with you.</p>
+    </section>
+
+    <section class="screen reveal compact">
+      <p class="kicker">How it works</p>
+      <h2>Four moves.</h2>
+      <div class="acts">
+        <div class="act"><b>01</b><strong>Fill</strong><p>Water in the neck on top. Cap back on. That is the whole ritual.</p></div>
+        <div class="act"><b>02</b><strong>Slide</strong><p>Thumb the ridged slider. The pipe rides a T-slot until the ports line up. It cannot pull off.</p></div>
+        <div class="act"><b>03</b><strong>Pour</strong><p>Tip it. A 2.4 mm jet. A thin stream out the beak, not a splash.</p></div>
+        <div class="act"><b>04</b><strong>Stow</strong><p>Slide the pipe flush with the face. Jacket. Purse. Next thing.</p></div>
+      </div>
+      <div class="still">
+        <img src="lota-jacket.jpg" width="1200" height="1200" alt="Pocket Lota in a jacket pocket">
+      </div>
+    </section>
+
+    <section class="screen reveal">
+      <h2>Your other daily driver.</h2>
+      <p class="sub">Same pour as the classic. Cut down so it is actually yours all day, not furniture in a bathroom.</p>
+      <div class="still">
+        <img src="lota-purse.jpg" width="1200" height="1200" alt="Pocket Lota in an open purse">
+      </div>
+    </section>
+
+    <section class="screen reveal">
+      <h2>Think different.</h2>
+      <p class="sub">Stay cleaner.</p>
+      <dl class="specs">
+        <div class="spec"><span>Capacity</span><span>500 ml</span></div>
+        <div class="spec"><span>Stowed</span><span>78 × 46 × 150 mm</span></div>
+        <div class="spec"><span>Jet</span><span>2.4 mm</span></div>
+      </dl>
+    </section>
+
+    <section class="screen reveal center">
+      <p class="kicker">Think different</p>
+      <h2>Stay cleaner.</h2>
+      <p class="dollars">$19.99</p>
+      <small class="fine">USD · Ships from pocketlota.com</small>
+    </section>
+  </main>
+
+  <footer>The most personal product Apple never made.</footer>
+  <div class="buy"><a id="buy" href="https://pocketlota.com">Buy · $19.99</a></div>
+  <script>
+    (function () {
+      var nodes = document.querySelectorAll(".reveal");
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduce || !("IntersectionObserver" in window)) {
+        nodes.forEach(function (el) { el.classList.add("is-in"); });
+      } else {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-in");
+            io.unobserve(entry.target);
+          });
+        }, { threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
+        nodes.forEach(function (el) { io.observe(el); });
+      }
+      var buy = document.getElementById("buy");
+      if (buy) buy.addEventListener("click", function () {
+        if (typeof fbq === "function") fbq("track", "Purchase", { currency: "USD", value: 19.99 });
+      });
+    })();
+  </script>
+</body>
+</html>

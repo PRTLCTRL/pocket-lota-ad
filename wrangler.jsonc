@@ -1,0 +1,8 @@
+{
+  "name": "pocket-lota-ad",
+  "account_id": "6a93f4e0f785a77f95436f494bb13fa3",
+  "compatibility_date": "2026-08-27",
+  "assets": {
+    "directory": "./public"
+  }
+}
