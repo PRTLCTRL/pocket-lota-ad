@@ -1,0 +1,10 @@
+from pathlib import Path
+p = Path("index.html")
+t = p.read_text(encoding="utf-8")
+t = t.replace('content="lota-stowed.png"', 'content="lota-stowed.png?v=2"')
+t = t.replace('href="lota-stowed.png"', 'href="lota-stowed.png?v=2"')
+t = t.replace("background: #efe8db;", "background: #1a1a1a;")
+t = t.replace("object-fit: contain;", "object-fit: cover;")
+t = t.replace('src="lota-stowed.png"', 'src="lota-stowed.png?v=2"')
+p.write_text(t, encoding="utf-8")
+print("html updated")
