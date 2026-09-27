@@ -175,3 +175,15 @@ TOP-5 ACTIONS: (1) swap CTA + signup-optimized objective (lead form or LP conver
 - Page state: real URL is `facebook.com/profile.php?id=61593583395478` (vanity `facebook.com/PocketLota` 404s; `sk=reels` tab 404s too, `sk=videos` works): 0 followers, not-yet-rated, bio + waitlist URL live.
 - Collector gap: `pocket_lota_analytics.py` ad_status returned "unknown" — its whitelist only knows "Active"/"In review", so the "Not delivering"/spend-limit state went **unnoticed ~9 days** while the cron kept reporting cumulative metrics. Fix candidate: alert on "Not delivering"/"spending limit" banners.
 - Round-2 test matrix (pre-staged, runs after Arsal resets limit + picks budget): remaining CA$10 headroom buys ONE comparison boost (v5b2 at $5.50/day × ~1.8d, or $3/day × ~3.3d) vs v4's CA$0.105/LPV baseline; testing BOTH alternates needs a cap raise (Arsal's call).
+
+## Sep 27 — dead-ad watchdog shipped: collector now alerts on "Not delivering" / spend-limit banners (#11 agent-side)
+
+- **The gap (found Sep 26 harvest):** `pocket_lota_analytics.py` ad_status whitelist only knew "Active"/"In review" → the boost ad died ~Sep 17 at Meta's own ad-account spend limit and **read as a normal metrics day for 9 days**. Fix candidate from the harvest: implemented today.
+- **Fix (collector, `C:\Users\Arsal\AppData\Local\hermes\scripts\pocket_lota_analytics.py`):**
+  1. Parsing extracted to pure function `parse_ads_text()` + `--selftest` mode: 11 offline regression tests (dead-ad/healthy/rejected/unknown-status/parse-error fixtures, incl. a fixture rebuilt from the **real captured 2026-09-27 page text**).
+  2. Status vocabulary extended (dead states first: Not delivering, Rejected, Disapproved, Paused, Completed; warn: In review, Scheduled) — nearest-status-word backward scan from the spend pair, 26-line window with section-header boundary guard (real card has ~16 lines between status and spend).
+  3. New additive JSON fields: `meta.alerts` (list) + `meta.delivery_alert` (bool) — spend-limit banner scan + dead-state detection + unknown-status surfacing. Old fields unchanged → backward-compatible with the cron's contract.
+  4. Cron prompt (job 9b87fe3e8284, jobs.json) patched in place — no new cron job: the daily 9:15 agent now LEADs the iMessage reply with alerts when `delivery_alert` is true. Jobs.json backup: `jobs.json.bak-20260927`.
+- **Verified end-to-end (2026-09-27):** selftest 11/11 PASS; live run via the cron's exact venv python → `ad_status: "Not delivering"`, spend CA$20.00 frozen, `alerts: [SPEND LIMIT HIT, AD NOT DELIVERING]`, `delivery_alert: true` — on the real ads_summary page (was silently "unknown"). Dashboard feed contract unchanged.
+- **Also re-verified today (no decay):** waitlist Worker HTTP 200; YT Short unP_KclQgn8 still live at 113 views; pmax assets at spec (1536×804 / 1024×1024 / 600×600); KV 4 test / 0 real signups.
+- **Round-2 boost still blocked on Arsal:** reset Meta ad-account spend limit + budget call (money, his hands) — unchanged.
