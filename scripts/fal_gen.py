@@ -149,7 +149,53 @@ CONCEPTS = {
             "the two, warm home light, realistic textures, visible sensor "
             "grain, casual candid clip"),
     },
+    # ---- batch 2 (Oct 10, spend-capped test round, seeds reused = $0 stills)
+    "A2": {
+        "name": "demo-arc-k25",
+        "model": "kling-25-turbo",
+        "seed_from": "A",
+        "video_models": [
+            ("fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+             lambda m, u: [{"prompt": m, "image_url": u, "duration": "5",
+                            "negative_prompt": NEG},
+                           {"prompt": m, "image_url": u, "duration": "5"}]),
+        ],
+        "still_prompt": "",  # seed reused from A - never generated
+        "motion_prompt": None,  # aliased from CONCEPTS["A"] below
+    },
+    "C2": {
+        "name": "size-contrast-k25",
+        "model": "kling-25-turbo",
+        "seed_from": "C",
+        "video_models": [
+            ("fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+             lambda m, u: [{"prompt": m, "image_url": u, "duration": "5",
+                            "negative_prompt": NEG},
+                           {"prompt": m, "image_url": u, "duration": "5"}]),
+        ],
+        "still_prompt": "",
+        "motion_prompt": None,  # aliased from CONCEPTS["C"] below
+    },
+    "B2": {
+        "name": "edc-pocket-vidu",
+        "model": "vidu-q4",
+        "seed_from": "B",
+        "video_models": [
+            # vidu q4: $0.0665/s @720p, native audio; schema per playground
+            ("fal-ai/vidu/q4/image-to-video",
+             lambda m, u: [{"prompt": m, "image_url": u, "duration": 5},
+                           {"prompt": m, "image_url": u},
+                           {"prompt": m, "start_image_url": u, "duration": 5},
+                           {"prompt": m, "img_url": u, "duration": 5}]),
+        ],
+        "still_prompt": "",
+        "motion_prompt": None,  # aliased from CONCEPTS["B"] below
+    },
 }
+
+# batch-2 concepts reuse the batch-1 motion prompts verbatim
+for _src, _dst in (("A", "A2"), ("C", "C2"), ("B", "B2")):
+    CONCEPTS[_dst]["motion_prompt"] = CONCEPTS[_src]["motion_prompt"]
 
 
 # ------------------------------------------------------------ raw transport --
@@ -260,6 +306,9 @@ def gen_still(cid, c):
     if os.path.exists(out):
         print("still %s exists - skip" % cid)
         return out
+    if not c.get("still_prompt"):
+        print("still %s: seed_from concept, no still generation" % cid)
+        return os.path.join(STILLS, "%s.png" % c.get("seed_from", cid))
     for model, argf in STILL_MODELS:
         for args in argf(c["still_prompt"]):
             try:
@@ -291,13 +340,19 @@ def gen_video(cid, c):
     if os.path.exists(final):
         print("video %s exists - skip" % cid)
         return final
-    still = os.path.join(STILLS, "%s.png" % cid)
-    if not os.path.exists(still):
-        print("video %s: no seed still - run stills stage first" % cid)
-        return None
-    seed_url = _seed_remote_url(still, cid)
-    if not seed_url:
-        return None
+    seed_id = c.get("seed_from", cid)
+    still = os.path.join(STILLS, "%s.png" % seed_id)
+    if c.get("t2v"):
+        seed_url = None
+    else:
+        if not os.path.exists(still):
+            print("video %s: no seed still for %s - run stills stage first"
+                  % (cid, seed_id))
+            return None
+        seed_url = _seed_remote_url(still, seed_id)
+        if not seed_url:
+            print("video %s: no recorded seed URL for %s" % (cid, seed_id))
+            return None
     for model, argf in c["video_models"]:
         for args in argf(c["motion_prompt"], seed_url):
             try:

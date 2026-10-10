@@ -329,3 +329,15 @@ TOP-5 ACTIONS: (1) swap CTA + signup-optimized objective (lead form or LP conver
 - **Product site check (his ask):** waitlist Worker + favicon both **HTTP 200** ✓ (live-verified Oct 10 evening).
 - **Spend:** ~$1–2 estimated for the full batch (exact in his fal dashboard). Single pass, no auto-retries after acceptance.
 - **Staging only — nothing published, nothing boosted, no Meta/budget touched.**
+
+## Oct 10 (night 3) — batch 2: engine-consistency tests ($1.03, spend-capped; Arsal's $10 credit, no auto top-ups ever)
+
+- **Ground rule set by Arsal:** he added $10 credit — agent never adds credit, states cost before each run, single-pass only. **Prices verified live from model pages:** Kling 2.5 Turbo Pro i2v **$0.35/5s** (+$0.07/s extra); Kling v3 Pro i2v **$0.112/s audio-off, $0.168/s audio-on** (batch-1 A was ≈$0.84); Vidu Q4 i2v **$0.0665/s @720p** ($0.33/5s, native audio). Batch-2 plan: 3 renders, seeds REUSED from batch 1 ($0 stills — `seed_from` concept aliasing added to fal_gen.py + an empty-prompt guard so seed-reuse concepts can never bill a still).
+- **Batch-2 results (all accepted first-arg-attempt):**
+  - **A2 demo-arc on Kling 2.5** ($0.35): WARN — grain σ 0.250 (same clean tell as v3 Pro on the same seed). Water physics held up; jitter ok.
+  - **C2 size-contrast on Kling 2.5** ($0.35): WARN — grain σ 0.500. Yellow 16.7% (bottle + steel lota both read).
+  - **B2 edc-pocket on Vidu Q4** ($0.33): WARN — grain σ 1.000 OK (sensor noise present), but **jitter 0.139px** < 0.15 threshold → steady-camera flag: Vidu's motion too smooth despite the micro-shake prompt.
+- **The batch-2 finding (the real result): grain is SCENE-DRIVEN, not engine-driven.** The edc-pocket scene (dim, fabric-textured backpack pocket, warm window light) produced σ≥1.0 on BOTH engines that rendered it (Kling 2.5: 1.25 → PASS; Vidu: 1.0), while the bright clean bathroom scenes rendered σ 0.25–0.5 on every engine. **Creative rule extracted: dimmer, texture-rich, warm-light environments both read more like phone footage AND pass the gate; blown-out bright bathrooms are the AI look.** This should feed the UGC shot lists' lighting notes (warm bulb + window, not overhead white) — a free upgrade to the shoot.
+- **Engine map after 6 renders / 4 engines:** Kling 2.5 Turbo = the workhorse (PASS on its scene, correct jitter, $0.35); Kling v3 Pro = audio + polish, same grain tell; Vidu Q4 = noise OK but too-steady motion; LTX 13B = cheapest, clean-grain tell. Verdict: **Kling 2.5 Turbo + warm/low-light scenes = the synthetic b-roll recipe** until a shoot exists.
+- **Spend tally:** batch 1 ≈ $1.75 + batch 2 $1.03 ≈ **$2.8 of $10**; ~$7.2 headroom.
+- **Staging only — nothing published, nothing boosted, no Meta/budget touched.**

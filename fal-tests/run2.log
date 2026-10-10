@@ -1,0 +1,88 @@
+FAL key loaded from repo .env (never printed)
+== still A2 (demo-arc-k25) ==
+still A2: seed_from concept, no still generation
+== still C2 (size-contrast-k25) ==
+still C2: seed_from concept, no still generation
+== still B2 (edc-pocket-vidu) ==
+still B2: seed_from concept, no still generation
+== video A2 (demo-arc-k25) ==
+  submit video-A2 :: fal-ai/kling-video/v2.5-turbo/pro/image-to-video
+    accepted request 01a1274b-9fb0-7de1-a25a-50c06ca12a31
+    IN_PROGRESS pos= (0s)
+    IN_PROGRESS pos= (6s)
+    IN_PROGRESS pos= (11s)
+    IN_PROGRESS pos= (17s)
+    IN_PROGRESS pos= (22s)
+    IN_PROGRESS pos= (28s)
+    IN_PROGRESS pos= (33s)
+    IN_PROGRESS pos= (39s)
+    IN_PROGRESS pos= (44s)
+    IN_PROGRESS pos= (50s)
+    IN_PROGRESS pos= (55s)
+    IN_PROGRESS pos= (60s)
+    IN_PROGRESS pos= (66s)
+    IN_PROGRESS pos= (71s)
+    IN_PROGRESS pos= (77s)
+    IN_PROGRESS pos= (82s)
+    IN_PROGRESS pos= (87s)
+    completed in 93s
+  -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\A2-demo-arc-k25.mp4 (via fal-ai/kling-video/v2.5-turbo/pro/image-to-video)
+== video C2 (size-contrast-k25) ==
+  submit video-C2 :: fal-ai/kling-video/v2.5-turbo/pro/image-to-video
+    accepted request 01a1274d-11a1-75d1-90ef-15fd7ae14929
+    IN_PROGRESS pos= (0s)
+    IN_PROGRESS pos= (6s)
+    IN_PROGRESS pos= (11s)
+    IN_PROGRESS pos= (17s)
+    IN_PROGRESS pos= (22s)
+    IN_PROGRESS pos= (27s)
+    IN_PROGRESS pos= (33s)
+    IN_PROGRESS pos= (38s)
+    IN_PROGRESS pos= (44s)
+    IN_PROGRESS pos= (49s)
+    IN_PROGRESS pos= (54s)
+    IN_PROGRESS pos= (60s)
+    IN_PROGRESS pos= (65s)
+    IN_PROGRESS pos= (70s)
+    IN_PROGRESS pos= (76s)
+    completed in 82s
+  -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\C2-size-contrast-k25.mp4 (via fal-ai/kling-video/v2.5-turbo/pro/image-to-video)
+== video B2 (edc-pocket-vidu) ==
+  submit video-B2 :: fal-ai/vidu/q4/image-to-video
+    accepted request 01a1274e-56f8-76d1-9f0e-71d9a79ddbfc
+    IN_PROGRESS pos= (0s)
+    IN_PROGRESS pos= (6s)
+    IN_PROGRESS pos= (11s)
+    IN_PROGRESS pos= (17s)
+    IN_PROGRESS pos= (22s)
+    IN_PROGRESS pos= (27s)
+    IN_PROGRESS pos= (33s)
+    IN_PROGRESS pos= (38s)
+    IN_PROGRESS pos= (44s)
+    IN_PROGRESS pos= (49s)
+    IN_PROGRESS pos= (54s)
+    IN_PROGRESS pos= (60s)
+    IN_PROGRESS pos= (65s)
+    IN_PROGRESS pos= (70s)
+    IN_PROGRESS pos= (76s)
+    IN_PROGRESS pos= (81s)
+    IN_PROGRESS pos= (87s)
+    IN_PROGRESS pos= (92s)
+    IN_PROGRESS pos= (97s)
+    IN_PROGRESS pos= (103s)
+    IN_PROGRESS pos= (108s)
+    IN_PROGRESS pos= (114s)
+    IN_PROGRESS pos= (119s)
+    IN_PROGRESS pos= (124s)
+    completed in 130s
+  -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\B2-edc-pocket-vidu.mp4 (via fal-ai/vidu/q4/image-to-video)
+C:\Users\Arsal\Projects\pocket-lota-ad\scripts\fal_gen.py:423: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  px = list(img.getdata())
+A-demo-arc realism=WARN yellow=9.65%
+A2-demo-arc-k25 realism=WARN yellow=10.65%
+B-edc-pocket realism=PASS yellow=12.21%
+B2-edc-pocket-vidu realism=WARN yellow=12.69%
+C-size-contrast realism=WARN yellow=8.87%
+C2-size-contrast-k25 realism=WARN yellow=16.71%
+scores -> fal-tests/scores.json
+EXIT 0
