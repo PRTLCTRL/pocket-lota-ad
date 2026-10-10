@@ -1,0 +1,131 @@
+FAL key loaded from repo .env (never printed)
+== still A (demo-arc) ==
+  submit still-A :: fal-ai/nano-banana-pro
+    accepted request 01a12740-7c6f-7851-8325-08b977a432fe
+    IN_PROGRESS pos= (0s)
+    IN_PROGRESS pos= (6s)
+    IN_PROGRESS pos= (11s)
+    completed in 17s
+  -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\stills\A.png (via fal-ai/nano-banana-pro)
+== still B (edc-pocket) ==
+  submit still-B :: fal-ai/nano-banana-pro
+    accepted request 01a12740-ca36-7c12-8560-5bd0de5de410
+    IN_PROGRESS pos= (0s)
+    IN_PROGRESS pos= (6s)
+    IN_PROGRESS pos= (11s)
+    completed in 17s
+  -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\stills\B.png (via fal-ai/nano-banana-pro)
+== still C (size-contrast) ==
+  submit still-C :: fal-ai/nano-banana-pro
+    accepted request 01a12741-1592-72b1-958d-a3276421d349
+    IN_PROGRESS pos= (0s)
+    IN_PROGRESS pos= (6s)
+    IN_PROGRESS pos= (12s)
+    completed in 18s
+  -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\stills\C.png (via fal-ai/nano-banana-pro)
+== video A (demo-arc) ==
+  submit video-A :: fal-ai/kling-video/v3/pro/image-to-video
+    accepted request 01a12741-64cc-7862-ab4d-36c29a47aa99
+    IN_PROGRESS pos= (0s)
+    IN_PROGRESS pos= (6s)
+    IN_PROGRESS pos= (11s)
+    IN_PROGRESS pos= (17s)
+    IN_PROGRESS pos= (22s)
+    IN_PROGRESS pos= (28s)
+    IN_PROGRESS pos= (33s)
+    IN_PROGRESS pos= (39s)
+    IN_PROGRESS pos= (44s)
+    IN_PROGRESS pos= (50s)
+    IN_PROGRESS pos= (56s)
+    IN_PROGRESS pos= (61s)
+    IN_PROGRESS pos= (66s)
+    IN_PROGRESS pos= (72s)
+    IN_PROGRESS pos= (77s)
+    IN_PROGRESS pos= (83s)
+    IN_PROGRESS pos= (88s)
+    completed in 94s
+  -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\A-demo-arc.mp4 (via fal-ai/kling-video/v3/pro/image-to-video)
+== video B (edc-pocket) ==
+  submit video-B :: fal-ai/kling-video/v2.5-turbo/pro/image-to-video
+    accepted request 01a12742-e737-7630-b878-6d3c9cf53cf6
+    IN_PROGRESS pos= (0s)
+    IN_PROGRESS pos= (6s)
+    IN_PROGRESS pos= (11s)
+    IN_PROGRESS pos= (17s)
+    IN_PROGRESS pos= (22s)
+    IN_PROGRESS pos= (28s)
+    IN_PROGRESS pos= (33s)
+    IN_PROGRESS pos= (39s)
+    IN_PROGRESS pos= (44s)
+    IN_PROGRESS pos= (50s)
+    IN_PROGRESS pos= (55s)
+    IN_PROGRESS pos= (61s)
+    IN_PROGRESS pos= (66s)
+    IN_PROGRESS pos= (72s)
+    IN_PROGRESS pos= (77s)
+    IN_PROGRESS pos= (83s)
+    IN_PROGRESS pos= (88s)
+    IN_PROGRESS pos= (94s)
+    IN_PROGRESS pos= (99s)
+    IN_PROGRESS pos= (105s)
+    IN_PROGRESS pos= (110s)
+    IN_PROGRESS pos= (116s)
+    IN_PROGRESS pos= (121s)
+    IN_PROGRESS pos= (127s)
+    IN_PROGRESS pos= (132s)
+    IN_PROGRESS pos= (137s)
+    IN_PROGRESS pos= (143s)
+    IN_PROGRESS pos= (148s)
+    IN_PROGRESS pos= (154s)
+    IN_PROGRESS pos= (159s)
+    IN_PROGRESS pos= (165s)
+    IN_PROGRESS pos= (170s)
+    IN_PROGRESS pos= (176s)
+    IN_PROGRESS pos= (181s)
+    IN_PROGRESS pos= (187s)
+    IN_PROGRESS pos= (192s)
+    IN_PROGRESS pos= (198s)
+    IN_PROGRESS pos= (203s)
+    IN_PROGRESS pos= (209s)
+    IN_PROGRESS pos= (214s)
+    IN_PROGRESS pos= (220s)
+    IN_PROGRESS pos= (225s)
+    IN_PROGRESS pos= (231s)
+    IN_PROGRESS pos= (236s)
+    IN_PROGRESS pos= (242s)
+    IN_PROGRESS pos= (247s)
+    IN_PROGRESS pos= (253s)
+    completed in 259s
+  -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\B-edc-pocket.mp4 (via fal-ai/kling-video/v2.5-turbo/pro/image-to-video)
+== video C (size-contrast) ==
+  submit video-C :: fal-ai/ltx-video-13b-distilled/image-to-video
+    accepted request 01a12746-fc6a-7032-9938-ca534b5339da
+    IN_QUEUE pos=0 (0s)
+    IN_QUEUE pos=0 (6s)
+    IN_QUEUE pos=0 (11s)
+    IN_QUEUE pos=0 (17s)
+    IN_QUEUE pos=0 (22s)
+    IN_QUEUE pos=0 (28s)
+    IN_QUEUE pos=0 (33s)
+    IN_QUEUE pos=0 (39s)
+    IN_QUEUE pos=0 (44s)
+    IN_QUEUE pos=0 (50s)
+    IN_QUEUE pos=0 (55s)
+    IN_QUEUE pos=0 (61s)
+    IN_QUEUE pos=0 (66s)
+    IN_QUEUE pos=0 (72s)
+    IN_QUEUE pos=0 (77s)
+    IN_QUEUE pos=0 (83s)
+    IN_PROGRESS pos= (88s)
+    IN_PROGRESS pos= (94s)
+    IN_PROGRESS pos= (99s)
+    IN_PROGRESS pos= (105s)
+    completed in 111s
+  -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\C-size-contrast.mp4 (via fal-ai/ltx-video-13b-distilled/image-to-video)
+C:\Users\Arsal\Projects\pocket-lota-ad\scripts\fal_gen.py:368: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  px = list(img.getdata())
+A-demo-arc realism=WARN yellow=9.65%
+B-edc-pocket realism=PASS yellow=12.21%
+C-size-contrast realism=WARN yellow=8.87%
+scores -> fal-tests/scores.json
+EXIT 0

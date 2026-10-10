@@ -1,0 +1,38 @@
+[
+  {
+    "file": "A-demo-arc.mp4",
+    "realism": "WARN",
+    "details": [
+      "grain:    median noise sigma 0.250 (per-frame 0.250..0.250; clean if < 1.0) -> FLAG suspiciously clean",
+      "shake:    0/23 duplicated-frame pairs (0%; real sensors re-roll noise every frame) -> ok < 25% | 0 scene cuts excluded, 23 live pairs",
+      "live-pair jitter residual 0.391 px (steady if < 0.15) -> ok (handheld micro-jitter)",
+      "repeat:   0/24 frames with autocorr peak >= 0.6 -> ok (no strong periodic structure)"
+    ],
+    "yellow_pct": 9.65,
+    "concept": "A-demo-arc"
+  },
+  {
+    "file": "B-edc-pocket.mp4",
+    "realism": "PASS",
+    "details": [
+      "grain:    median noise sigma 1.250 (per-frame 1.250..1.250; clean if < 1.0) -> ok (sensor noise present)",
+      "shake:    0/23 duplicated-frame pairs (0%; real sensors re-roll noise every frame) -> ok < 25% | 4 scene cuts excluded, 19 live pairs",
+      "live-pair jitter residual 0.967 px (steady if < 0.15) -> ok (handheld micro-jitter)",
+      "repeat:   0/24 frames with autocorr peak >= 0.6 -> ok (no strong periodic structure)"
+    ],
+    "yellow_pct": 12.21,
+    "concept": "B-edc-pocket"
+  },
+  {
+    "file": "C-size-contrast.mp4",
+    "realism": "WARN",
+    "details": [
+      "grain:    median noise sigma 0.500 (per-frame 0.500..0.500; clean if < 1.0) -> FLAG suspiciously clean",
+      "shake:    0/23 duplicated-frame pairs (0%; real sensors re-roll noise every frame) -> ok < 25% | 0 scene cuts excluded, 23 live pairs",
+      "live-pair jitter residual 0.847 px (steady if < 0.15) -> ok (handheld micro-jitter)",
+      "repeat:   0/24 frames with autocorr peak >= 0.6 -> ok (no strong periodic structure)"
+    ],
+    "yellow_pct": 8.87,
+    "concept": "C-size-contrast"
+  }
+]

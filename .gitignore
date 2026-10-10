@@ -1,0 +1,16 @@
+# secrets — NEVER commit
+.env
+*.key
+
+# fal test render outputs (review copies stay local; vault = put.io when they graduate)
+fal-tests/*.mp4
+fal-tests/_tmp*
+
+# python
+__pycache__/
+*.pyc
+.venv/
+
+# os / editor
+.DS_Store
+Thumbs.db
