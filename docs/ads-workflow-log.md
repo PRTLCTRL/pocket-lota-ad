@@ -352,3 +352,14 @@ TOP-5 ACTIONS: (1) swap CTA + signup-optimized objective (lead form or LP conver
 - **Both uploaded to the vault:** put.io `pocket-lota/ads-shorts/fal-tests/` (verified). Same folder link as the 6 renders.
 - **Spend this round: $0.** Next proposed round (his go, ~$1–1.5): 2–3 renders with the real design via reference (nano-banana edit seed pass first, then Kling v3 Elements i2v), dim/warm scenes per the batch-2 finding, one corporate-woman office-context scene + VO.
 - **Staging only — nothing published, nothing boosted, no Meta/budget touched.**
+
+## Oct 10 (night 5) — batch 3 RUN ($1.2): real-design consistency via edit-model seeds + corporate office story + realistic female VO
+
+- **His review of mash v1 + VO v1:** "MUCH better", copy loved verbatim; asks: realistic (less AI) voice · corporate office storytelling · woman's hand · design consistency ("isn't there design specs locally?").
+- **Design-spec answer:** no written spec doc exists — **the repo's creative assets ARE the spec**: `lota-detail.jpg` (1080×1080 product detail), `lota-pour.png`, `lota-stowed.png`, `public/` hero set (incl. the bot-era **female pour hero** — a woman's hand already exists in the original creative). All are now the reference set.
+- **Batch 3 executed (script `scripts/fal_batch3.py`, all first-attempt accepts):** real design (`lota-detail.jpg` padded to a 9:16 canvas, passed as a **data-URI reference** — no upload needed) → **nano-banana-pro/edit** seeds: "keep this exact product design completely unchanged" + woman's manicured hand + corporate office desk / tote-bag scenes, warm window light → **Kling 2.5 Turbo i2v** both scenes → **ElevenLabs multilingual-v2** VO (voice Rachel, **F0 201Hz female-verified** — replaces the too-AI edge voice), same copy verbatim. Assembled `fal-corporate-v1.mp4`: desk-break → demo-arc (native water audio) → sealed-in-bag, 13.96s, fade + smoothleft.
+- **Gate on the new scenes: WARN** — grain σ 0.500 on both (dim/warm helped vs the bathroom's 0.25, but still short of B-edc-pocket's 1.25 PASS; jitter OK: 0.24–0.32px, mash jitter 1.23 OK). Honest read: the office renders are the most consistent + on-brief yet, but only his eyeball can verify the two things that matter — **does the product design actually match, and does the voice pass as human.**
+- **Sealed-in-bag scene = his leak-proof selling point** on camera for the first time (zipper closing over the real-design bottle).
+- **Uploaded to put.io vault:** fal-corporate-v1 + scene-desk + scene-bag + vo-female-real.mp3 (4/4 OK). Spend: ~$1.2 (2 edits + 2 Kling + 1 TTS); tally ≈ **$4.0 of $10**.
+- **If his eyeball passes the design + voice:** the edit→i2v path becomes the standing synthetic pipeline (per-scene seeds from the real design, story assembly like ugc_cut). Real-photo shoot still owns hero content.
+- **Staging only — nothing published, nothing boosted, no Meta/budget touched.**

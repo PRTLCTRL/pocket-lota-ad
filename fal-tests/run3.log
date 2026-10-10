@@ -1,0 +1,72 @@
+FAL key loaded from repo .env (never printed)
+design ref padded: C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\b3\design-ref-916.png (441246 bytes as data uri)
+  edit submit desk-break (attempt 1)
+    accepted request 01a12769-e169-7ec0-8f37-e7c7591c1a95
+    IN_PROGRESS pos= (0s)
+    IN_PROGRESS pos= (6s)
+    IN_PROGRESS pos= (11s)
+    completed in 16s
+  -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\b3\seed-desk.png
+  edit submit sealed-bag (attempt 1)
+    accepted request 01a1276a-25a2-7100-9b17-5e5f0b555524
+    IN_PROGRESS pos= (0s)
+    IN_PROGRESS pos= (6s)
+    IN_PROGRESS pos= (11s)
+    completed in 16s
+  -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\b3\seed-bag.png
+  i2v submit desk-break
+    accepted request 01a1276a-6943-76e3-a20d-b5df78c03f6d
+    IN_PROGRESS pos= (0s)
+    IN_PROGRESS pos= (6s)
+    IN_PROGRESS pos= (11s)
+    IN_PROGRESS pos= (16s)
+    IN_PROGRESS pos= (21s)
+    IN_PROGRESS pos= (27s)
+    IN_PROGRESS pos= (32s)
+    IN_PROGRESS pos= (37s)
+    IN_PROGRESS pos= (43s)
+    IN_PROGRESS pos= (48s)
+    IN_PROGRESS pos= (53s)
+    IN_PROGRESS pos= (59s)
+    IN_PROGRESS pos= (64s)
+    IN_PROGRESS pos= (69s)
+    IN_PROGRESS pos= (74s)
+    IN_PROGRESS pos= (80s)
+    IN_PROGRESS pos= (85s)
+    completed in 91s
+  -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\b3\scene-desk.mp4
+  i2v submit sealed-bag
+    accepted request 01a1276b-d0b1-7b62-b334-f69c56304670
+    IN_PROGRESS pos= (0s)
+    IN_PROGRESS pos= (6s)
+    IN_PROGRESS pos= (11s)
+    IN_PROGRESS pos= (16s)
+    IN_PROGRESS pos= (21s)
+    IN_PROGRESS pos= (27s)
+    IN_PROGRESS pos= (32s)
+    IN_PROGRESS pos= (37s)
+    IN_PROGRESS pos= (43s)
+    IN_PROGRESS pos= (48s)
+    IN_PROGRESS pos= (53s)
+    IN_PROGRESS pos= (58s)
+    IN_PROGRESS pos= (64s)
+    IN_PROGRESS pos= (69s)
+    IN_PROGRESS pos= (74s)
+    IN_PROGRESS pos= (80s)
+    IN_PROGRESS pos= (85s)
+    IN_PROGRESS pos= (90s)
+    IN_PROGRESS pos= (96s)
+    IN_PROGRESS pos= (101s)
+    IN_PROGRESS pos= (106s)
+    IN_PROGRESS pos= (111s)
+    completed in 117s
+  -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\b3\scene-bag.mp4
+  tts submit (elevenlabs multilingual-v2)
+    accepted request 01a1276d-9f5b-74c3-9a99-1d0b49f6a39a
+    IN_PROGRESS pos= (0s)
+    completed in 6s
+  -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\b3\vo-female-real.mp3
+CORPORATE MASH -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\fal-corporate-v1.mp4
+duration: 13.961995s
+elevenlabs VO: median F0 201 Hz -> FEMALE
+EXIT 0

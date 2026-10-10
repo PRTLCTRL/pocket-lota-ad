@@ -5,6 +5,7 @@
 # fal test render outputs (review copies stay local; vault = put.io when they graduate)
 fal-tests/*.mp4
 fal-tests/_tmp*
+fal-tests/b3/
 
 # python
 __pycache__/
