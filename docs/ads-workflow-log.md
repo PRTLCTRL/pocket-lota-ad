@@ -305,3 +305,9 @@ TOP-5 ACTIONS: (1) swap CTA + signup-optimized objective (lead form or LP conver
 - **Pitfall logged:** `brand_vet_v2.py` needs the Hermes venv python (Store Python lacks numpy); the script's next-steps hint prints the exact venv command.
 - **What this unblocks:** the calendar's D0 line ("clips through vet + realism gate same evening; stage in `shorts/`") is now fully mechanical — shoot day ends with finished staged cuts + beat sheet, no manual edit pass. The board still waits on Arsal's **shoot-window pick** (cultural list first, ~60 min, one afternoon).
 - **Staging only — nothing published, nothing boosted, no Meta/budget touched.**
+
+## Oct 10 (night) — fal.ai realism test kit staged for Arsal's model tests (prompt pack, no publishing)
+
+- **Ask:** Arsal wants to test making better/realer shorts himself on fal.ai (product demo options that don't read AI). **Delivered:** `docs/fal-realism-test-prompts.md` — 3 copy-paste prompts (A product-demo water arc, B everyday-carry no-water, C hand-wash outro), each with seed-still + i2v + negative-prompt variants, fal model picks (Kling 2.5 Turbo / Veo 3 / Hailuo 02, 9:16, low creativity), the realism-gate PASS targets as a table (grain σ ≥ 1.0, dup pairs < 25%, jitter ≥ 0.15px, autocorr < 0.6 vs the 4/4 FAIL scores of the current films), brand locks baked into every prompt (no cap, spout down, destination never shown, sink only in the outro), and the scoring loop: he drops outputs → Hermes gate-scores each → results logged. Honesty ladder restated: even a PASSING render isn't passed off as real footage (Oct 3 rule).
+- **Stack verified live for the answer:** films = Veo-class i2v via fal from stills seeds (gpt-image-1); cutting = ffmpeg 8.1.1 + `ugc_cut.py` + `brand_vet_v2.py`. Hermes in-tool image gen unavailable this session (no FAL_KEY) → seed-still prompts included so the whole test runs on fal.
+- **Staging only — nothing published, nothing boosted, no Meta/budget touched.**
