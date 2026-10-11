@@ -377,3 +377,10 @@ TOP-5 ACTIONS: (1) swap CTA + signup-optimized objective (lead form or LP conver
 - **Gate:** all 3 scenes WARN on grain (σ 0.5–0.75 — closest yet to 1.0; jitter all OK). Design consistency across the 3 scenes + scale = **his eyeball decides** — that's the one check no gate can do.
 - **Uploaded to put.io vault (7 files):** fal-corporate-v2 + 3 b4 scenes + 3 b4 seeds; b3/b4 scenes renamed for direct comparison (b3-desk vs b4-desk-elements etc.). Spend: ~$1.9 (3 edits + 1 v3pro + 2 K2.5); **tally ≈ $5.9 of $10**.
 - **Staging only — nothing published, nothing boosted, no Meta/budget touched.**
+
+## Oct 10 (night 7) — fal-corporate-v3: TikTok-style word-pop captions (his "yes", ~$0.10)
+
+- **Path:** `scripts/fal_batch5.py` — regenerated VO via fal ElevenLabs (Rachel) → word timings → 30fps RGBA caption track (words pop in white, ACTIVE word brand-yellow, dark scrim, bottom third) → single ffmpeg overlay onto the pre-subtitle corporate mash → **fal-corporate-v3.mp4** (14.0s). Deterministic verify PASS: yellow active-word 2,712px + white priors 12,812px mid-line, 0 at tail.
+- **Discoveries:** (1) fal's ElevenLabs wrapper returns a `timestamps` field alongside `audio` — exact per-word timing EXISTS; my parser expected ElevenLabs' raw char-array shape and missed it, so this round used the **energy-onset fallback** (numpy short-time-energy valleys → 28 word onsets) — worked, verify passed. Next polish round: parse the `timestamps` field directly for frame-exact word pops. (2) Confirmed live: fal's catalog has NO subtitle/caption models — captioning stays local (free, brand-controlled).
+- **Uploaded to put.io vault:** fal-corporate-v3.mp4. Spend ~$0.10; **tally ≈ $6.0 of $10**.
+- **Staging only — nothing published, nothing boosted, no Meta/budget touched.**
