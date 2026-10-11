@@ -363,3 +363,17 @@ TOP-5 ACTIONS: (1) swap CTA + signup-optimized objective (lead form or LP conver
 - **Uploaded to put.io vault:** fal-corporate-v1 + scene-desk + scene-bag + vo-female-real.mp3 (4/4 OK). Spend: ~$1.2 (2 edits + 2 Kling + 1 TTS); tally ≈ **$4.0 of $10**.
 - **If his eyeball passes the design + voice:** the edit→i2v path becomes the standing synthetic pipeline (per-scene seeds from the real design, story assembly like ugc_cut). Real-photo shoot still owns hero content.
 - **Staging only — nothing published, nothing boosted, no Meta/budget touched.**
+
+## Oct 10 (night 6) — batch 4 (~$1.9): consistency + true scale + subtitles — fal-corporate-v2 shipped
+
+- **His verdict on corporate v1:** "OK" but (1) **product still inconsistent across scenes** — he got a PUBLIC comment on one of our ads: "AI, the product doesn't look consistent"; (2) **scale wrong — the real product is the size of a single AirPods Max earcup** ("pocket" is literal), earlier renders were oversized bottles; (3) asked for subtitles burned in.
+- **Batch 4 executed (`scripts/fal_batch4.py`, all first-attempt accepts):**
+  - **Consistency mechanism upgraded:** every seed references BOTH product views (lota-detail.jpg padded 9:16 + lota-pour.png, as data URIs) + hard lock language ("do not redesign, restyle or reinterpret any part"); the desk scene additionally ran **Kling v3 Pro ELEMENTS** — the product as a reference element with "#1" in the motion prompt — and fal accepted the elements arg first-try (data-URI frontal + reference images worked).
+  - **Scale anchored everywhere:** "TINY — the size of a single AirPods Max earcup, clearly smaller than her palm, dwarfed by the coffee cup" + a dedicated **size-proof scene** (product picked up palm-open next to a coffee cup and sunglasses case).
+  - **Scenes:** b4-desk (v3 Pro + elements), b4-size-proof (K2.5), b4-bag (K2.5) → story: desk-break → size-proof → zipper-sealed (leak-proof beat).
+  - **Subtitles burned in** over the VO (3 PIL-scrimmed lines timed to the copy windows) — deterministic verify: 22,057 white-px in-window vs 0 in the gap. VO reused from batch 3 (ElevenLabs Rachel, $0).
+  - **`fal-corporate-v2.mp4` (14.0s)** — subtitles + VO + real-design seeds + scale anchors.
+- **Pitfall hit + fixed:** subtitle burn with `-loop 1` PNG inputs and no cap = encode never ends (90GB-class bloat caught at 90MB, killed); fix = `-t 13.97` cap on the final pass. Resumable design meant the rerun cost $0.
+- **Gate:** all 3 scenes WARN on grain (σ 0.5–0.75 — closest yet to 1.0; jitter all OK). Design consistency across the 3 scenes + scale = **his eyeball decides** — that's the one check no gate can do.
+- **Uploaded to put.io vault (7 files):** fal-corporate-v2 + 3 b4 scenes + 3 b4 seeds; b3/b4 scenes renamed for direct comparison (b3-desk vs b4-desk-elements etc.). Spend: ~$1.9 (3 edits + 1 v3pro + 2 K2.5); **tally ≈ $5.9 of $10**.
+- **Staging only — nothing published, nothing boosted, no Meta/budget touched.**

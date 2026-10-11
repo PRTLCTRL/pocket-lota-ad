@@ -1,0 +1,100 @@
+FAL key loaded from repo .env (never printed)
+product refs loaded (detail+pour, 490 KB total)
+  edit submit desk (attempt 1)
+    accepted request 01a1285a-d802-7d41-8fb8-ae375b651139
+    IN_PROGRESS pos= (0s)
+    IN_PROGRESS pos= (6s)
+    IN_PROGRESS pos= (11s)
+    IN_PROGRESS pos= (16s)
+    completed in 22s
+  -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\b4\seed-desk.png
+  edit submit size (attempt 1)
+    accepted request 01a1285b-336f-7872-b325-9abe5aed2f2a
+    IN_PROGRESS pos= (0s)
+    IN_PROGRESS pos= (6s)
+    IN_PROGRESS pos= (11s)
+    completed in 17s
+  -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\b4\seed-size.png
+  edit submit bag (attempt 1)
+    accepted request 01a1285b-78f3-7141-b357-95a2df918869
+    IN_PROGRESS pos= (0s)
+    IN_PROGRESS pos= (6s)
+    IN_PROGRESS pos= (11s)
+    completed in 17s
+  -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\b4\seed-bag.png
+  i2v submit desk :: fal-ai/kling-video/v3/pro/image-to-video
+    accepted request 01a1285b-c046-7f80-a8bc-71c452681caa
+    IN_PROGRESS pos= (0s)
+    IN_PROGRESS pos= (6s)
+    IN_PROGRESS pos= (11s)
+    IN_PROGRESS pos= (16s)
+    IN_PROGRESS pos= (22s)
+    IN_PROGRESS pos= (27s)
+    IN_PROGRESS pos= (33s)
+    IN_PROGRESS pos= (38s)
+    IN_PROGRESS pos= (43s)
+    IN_PROGRESS pos= (49s)
+    IN_PROGRESS pos= (54s)
+    IN_PROGRESS pos= (59s)
+    IN_PROGRESS pos= (65s)
+    IN_PROGRESS pos= (70s)
+    IN_PROGRESS pos= (75s)
+    IN_PROGRESS pos= (81s)
+    IN_PROGRESS pos= (86s)
+    IN_PROGRESS pos= (92s)
+    IN_PROGRESS pos= (97s)
+    IN_PROGRESS pos= (102s)
+    IN_PROGRESS pos= (108s)
+    IN_PROGRESS pos= (113s)
+    IN_PROGRESS pos= (118s)
+    IN_PROGRESS pos= (124s)
+    completed in 129s
+  -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\b4\scene-desk.mp4
+  i2v submit size :: fal-ai/kling-video/v2.5-turbo/pro/image-to-video
+    accepted request 01a1285d-bf78-7350-92c0-94a4803ae07a
+    IN_PROGRESS pos= (0s)
+    IN_PROGRESS pos= (6s)
+    IN_PROGRESS pos= (11s)
+    IN_PROGRESS pos= (17s)
+    IN_PROGRESS pos= (22s)
+    IN_PROGRESS pos= (27s)
+    IN_PROGRESS pos= (33s)
+    IN_PROGRESS pos= (38s)
+    IN_PROGRESS pos= (43s)
+    IN_PROGRESS pos= (49s)
+    IN_PROGRESS pos= (54s)
+    IN_PROGRESS pos= (59s)
+    IN_PROGRESS pos= (65s)
+    IN_PROGRESS pos= (70s)
+    IN_PROGRESS pos= (75s)
+    IN_PROGRESS pos= (81s)
+    IN_PROGRESS pos= (86s)
+    completed in 92s
+  -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\b4\scene-size.mp4
+  i2v submit bag :: fal-ai/kling-video/v2.5-turbo/pro/image-to-video
+    accepted request 01a1285f-2b8a-72c2-91d0-5b08337ad614
+    IN_PROGRESS pos= (0s)
+    IN_PROGRESS pos= (6s)
+    IN_PROGRESS pos= (11s)
+    IN_PROGRESS pos= (16s)
+    IN_PROGRESS pos= (22s)
+    IN_PROGRESS pos= (27s)
+    IN_PROGRESS pos= (33s)
+    IN_PROGRESS pos= (38s)
+    IN_PROGRESS pos= (43s)
+    IN_PROGRESS pos= (49s)
+    IN_PROGRESS pos= (54s)
+    IN_PROGRESS pos= (59s)
+    completed in 65s
+  -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\b4\scene-bag.mp4
+vo mash -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\b4\corporate-v2-vo.mp4
+Traceback (most recent call last):
+  File "C:\Users\Arsal\Projects\pocket-lota-ad\scripts\fal_batch4.py", line 340, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "C:\Users\Arsal\Projects\pocket-lota-ad\scripts\fal_batch4.py", line 310, in main
+    subprocess.run(["ffmpeg", "-y", "-v", "error"] + inputs +
+  File "C:\Users\Arsal\AppData\Roaming\uv\python\cpython-3.11.11-windows-x86_64-none\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ffmpeg', '-y', '-v', 'error', '-i', 'C:\\Users\\Arsal\\Projects\\pocket-lota-ad\\fal-tests\\b4\\corporate-v2-vo.mp4', '-loop', '1', '-i', 'C:\\Users\\Arsal\\Projects\\pocket-lota-ad\\fal-tests\\b4\\sub_0.png', '-loop', '1', '-i', 'C:\\Users\\Arsal\\Projects\\pocket-lota-ad\\fal-tests\\b4\\sub_1.png', '-loop', '1', '-i', 'C:\\Users\\Arsal\\Projects\\pocket-lota-ad\\fal-tests\\b4\\sub_2.png', '-filter_complex', "[1:v]format=rgba,fade=t=in:st=0.60:d=0.25:alpha=1,fade=t=out:st=3.95:d=0.25:alpha=1[s0];[2:v]format=rgba,fade=t=in:st=4.60:d=0.25:alpha=1,fade=t=out:st=8.55:d=0.25:alpha=1[s1];[3:v]format=rgba,fade=t=in:st=9.20:d=0.25:alpha=1,fade=t=out:st=12.95:d=0.25:alpha=1[s2];[0:v][s0]overlay=0:0:enable='between(t,0.60,4.20)'[vt0];[vt0][s1]overlay=0:0:enable='between(t,4.60,8.80)'[vt1];[vt1][s2]overlay=0:0:enable='between(t,9.20,13.20)'[vout]", '-map', '[vout]', '-map', '0:a', '-c:v', 'libx264', '-preset', 'medium', '-crf', '20', '-pix_fmt', 'yuv420p', '-c:a', 'copy', '-movflags', '+faststart', 'C:\\Users\\Arsal\\Projects\\pocket-lota-ad\\fal-tests\\fal-corporate-v2.mp4']' returned non-zero exit status 4294967295.
+EXIT 1

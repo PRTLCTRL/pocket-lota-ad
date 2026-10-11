@@ -6,6 +6,7 @@
 fal-tests/*.mp4
 fal-tests/_tmp*
 fal-tests/b3/
+fal-tests/b4/
 
 # python
 __pycache__/
