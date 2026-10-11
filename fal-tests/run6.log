@@ -1,0 +1,22 @@
+FAL key loaded from repo .env (never printed)
+black-cap ref loaded (1456 KB)
+seed grab exists - skip
+seed door exists - skip
+seed pour exists - skip
+seed wash exists - skip
+video grab exists - skip
+video door exists - skip
+video pour exists - skip
+video wash exists - skip
+vo exists - skip
+word timings: metadata
+   0.22-0.13 Calendar
+   0.13-1.49 says
+   1.49-2.18 2:45.
+film length: 17.5s
+vo mash -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\b6\v4-vo.mp4
+caption blocks: 7
+caption track: 24 states -> 540 frames
+FINAL -> C:\Users\Arsal\Projects\pocket-lota-ad\fal-tests\fal-corporate-v4.mp4 (17.500000s)
+gate: WARN | yellow 11.05%
+EXIT 0
