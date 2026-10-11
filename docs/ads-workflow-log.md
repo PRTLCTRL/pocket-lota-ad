@@ -393,3 +393,9 @@ TOP-5 ACTIONS: (1) swap CTA + signup-optimized objective (lead form or LP conver
 - **Waiting on his picks:** technique (T1+T2 recommended), copy option (A/B/C), then the v4 batch renders. Bot consult available on Grok relaunch (his OK).
 - **Spend this round: ~$0.2 (black-cap edit); tally ≈ $6.2 of $10.**
 - **Staging only — nothing published, nothing boosted, no Meta/budget touched.**
+
+## Oct 10 (night 9) — vault archived to the v3 pipeline ($0)
+
+- **His call:** "the latest type is the one I want to work with" — the b4/v3 pipeline (dual-ref consistent design + black-cap ref going forward + word-pop captions + Rachel VO) is now the standing creative format; all earlier experiment rounds archived.
+- **put.io vault reorganized:** 13 superseded files → `fal-tests/archive-2026-10-10/` (all batch-1/2 renders A/B/C + A2/B2/C2, b3 scenes, mash v1, corporate v1 + v2, proof sheet). **Active set:** fal-corporate-v3 (current final), b4-desk-elements / b4-size-proof / b4-bag (working scenes), b4 seeds ×3, vo-female-real.mp3, lota-detail-blackcap.png (new canonical ref). Move via verified `/files/move` API, post-move listing verified 9 active + 13 archived.
+- **Staging only — nothing published, nothing boosted, no Meta/budget touched.**
