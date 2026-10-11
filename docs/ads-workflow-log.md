@@ -384,3 +384,12 @@ TOP-5 ACTIONS: (1) swap CTA + signup-optimized objective (lead form or LP conver
 - **Discoveries:** (1) fal's ElevenLabs wrapper returns a `timestamps` field alongside `audio` — exact per-word timing EXISTS; my parser expected ElevenLabs' raw char-array shape and missed it, so this round used the **energy-onset fallback** (numpy short-time-energy valleys → 28 word onsets) — worked, verify passed. Next polish round: parse the `timestamps` field directly for frame-exact word pops. (2) Confirmed live: fal's catalog has NO subtitle/caption models — captioning stays local (free, brand-controlled).
 - **Uploaded to put.io vault:** fal-corporate-v3.mp4. Spend ~$0.10; **tally ≈ $6.0 of $10**.
 - **Staging only — nothing published, nothing boosted, no Meta/budget touched.**
+
+## Oct 10 (night 8) — design consistency VALIDATED + black-cap ref + implied-washroom concept doc
+
+- **His verdict on v3:** "Amazing work — the same consistent product throughout now" (the dual-ref + Elements + lock-language pipeline is the standing path) + subtitles "100% accurate."
+- **Black cap (his ask):** `fal-tests/design-ref/lota-detail-blackcap.png` — nano-banana edit of lota-detail.jpg ("matte black cover sealing the opening, subtle seam"), $0.2, uploaded to the vault. **New canonical ref: every future seed references the black-cap version** so "sealed" is always visible. His eyeball confirms the cap look.
+- **Implied-washroom ask ("the copy and experience we need to nail"):** delivered `docs/implied-washroom-concepts.md` — 5 director techniques for "pour motion while seated without showing the toilet" (recommended core: **T1 tilt-down tile POV** for the pour + **T2 closed-door OCCUPIED sign w/ muffled pour SFX** as the setup/exit; sound does the work per the standing brand locks), audio architecture (tile reverb, latch, pour, exhale), **3 VO options for his review** (A "the meeting you book with yourself" / B direct-warm / C calendar-rhythm "back by 2:47"), and a 5-beat v4 storyboard (~$1.4–1.9 est.). One technique (shoe-under-stall-gap) considered and REJECTED as a stall-interior lock violation — logged as a considered rejection.
+- **Waiting on his picks:** technique (T1+T2 recommended), copy option (A/B/C), then the v4 batch renders. Bot consult available on Grok relaunch (his OK).
+- **Spend this round: ~$0.2 (black-cap edit); tally ≈ $6.2 of $10.**
+- **Staging only — nothing published, nothing boosted, no Meta/budget touched.**
