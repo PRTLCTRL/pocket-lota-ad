@@ -198,6 +198,9 @@ TOP-5 ACTIONS: (1) swap CTA + signup-optimized objective (lead form or LP conver
   - **Assigned to Hermes:** once Arsal resets the account limit → build the lead form in Ads Manager (email-only, privacy URL, thank-you "You're on the list", `utm_content=v6a`). Nothing goes live without Arsal's go. Staff Eng to add a `/privacy` page to the Worker.
 - **Still on Arsal:** (1) reset Meta ad-account spend limit, (2) confirm CA$75 total ceiling (Advitisor set ~CA$4/day), (3) real **Meta Pixel ID** — currently placeholder zeros on the page, only he can pull it from Events Manager.
 
+- **Sep 27, 9:48 PM (bot-shipped, verified 2026-09-28):** Staff Eng shipped `/privacy` page (200 OK at pocket-lota-ad.prtl.workers.dev/privacy) — email+attribution-only collection, first-batch notify use, Cloudflare storage, Pixel disclosure, self-serve "Remove me" opt-out. **Gap: no contact email on record for Pocket Lota** — Meta reviewers sometimes look for one; Arsal to supply.
+- **Sep 28 note:** Grok Bot app updates itself and/or drops the debug port on restart (also Cursor sign-in can expire → app-side sign-in is Arsal's hands). Reattach recipe: close app → `Start-Process '…\Grok Bot.exe' --remote-debugging-port=9223` → `scripts/grokbot_cdp.py`. App 0.70.2, signedIn=true.
+
 ## Sep 27 — Advitisor handoff pass: post-mortem read, CA$75 cap, spend plan, staging held on 2 blockers
 
 - **Live read (read-only, no Meta edits):** ad 52606635640535 confirmed **"Not delivering"** ("Account spend limit reached" row; BS spend-limit banner; details modal Status: Not delivering). Delivery ended ~Sep 16-17. **CTA "Sign up" confirmed stuck** in the details-modal preview. Payment block: ad budget CA$20.00 + est. GST 13% CA$2.60 = **CA$22.60 total charged** — the old CA$20 cap was met on budget and passed only by tax; new plan counts GST-inclusive.
